@@ -3,7 +3,7 @@ import re
 
 
 def clouds_bqa_landsat(ee_img):
-    return ee_img.select(['BQA'], ["cloud"]).bitwiseAnd(int('0000000000010000', 2)).gt(0)
+    return ee_img.select(['QA_PIXEL'], ["cloud"]).bitwiseAnd(int('0000000000010000', 2)).gt(0)
 
 
 class L8L1TImage:
